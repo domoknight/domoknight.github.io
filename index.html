@@ -17,7 +17,7 @@ Simple Contraband / Zen Calculator
 </head>
 
 <body>
-
+<!--
 Change the values in the Yellow boxes to calculate how much Contraband you should buy...
 <br /><br />
 If you make a mistake, just refresh this page.
@@ -26,7 +26,7 @@ If you make a mistake, just refresh this page.
 
 <iframe width="589" height="419" frameborder="0" scrolling="no" src="https://onedrive.live.com/embed?cid=71D738FBE81223B0&resid=71D738FBE81223B0%21566&authkey=ABfXdgNKUN6jNlo&em=2&wdAllowInteractivity=False&AllowTyping=True&Item='Economy'!A1%3AF19&wdHideGridlines=True&wdDownloadButton=True"></iframe>
 
-
+-->
 
 <script type="text/javascript">
 
@@ -45,6 +45,8 @@ stacks.value = drain.value * 8;
 //Contraband
 
 	var form = document.getElementById("zencalc");
+	
+	var contra = parseInt(form.elements["contra"].value);
 
 	var keyrate = parseInt(form.elements["keyrate"].value);
 	var cbdrate = parseInt(form.elements["cbdrate"].value);
@@ -119,7 +121,7 @@ stacks.value = drain.value * 8;
 					<br /><br />
 				<u>Buying individual Keys</u>
 				<br /><p>Enter the number of Keys you want to buy:</p><input name="keynum" type="number" value="0" />
-				<br />For this, you will need to buy <output name="ind_cbd_num">0</output> Contraband.
+				<br />For this, you will need to buy <output name="ind_cbd_num" for="contra ind_cbd_num">0</output> Contraband.
 				<br />Using the rates above, this should cost <output name="ind_cbd_cost">0</output> EC, but after selling your keys should net <output name="ind_cbd_net">0</output> EC
 					</br></br>
 				<u>Buying 10-Packs of Keys</u>

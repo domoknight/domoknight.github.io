@@ -75,9 +75,18 @@ function DoTheMath() {
 		<div class="panel-body">
 			<form id="zencalc" oninput="DoTheMath()">
 				<p>Enter the current Exchange Rates for the following items:
-				<br /><b>Lockbox Key (in EC)</b><input name="keyrate" type="number" value="0" />
-				<br /><b>Contraband (in EC)</b><input name="cbdrate" type="number" value="0" />
-				<br /><b>Zen (in Dilithium)</b><input name="zenrate" type="number" value="0"/>
+				<table border=1>
+				<tr>
+				<th><b>Lockbox Key (in EC)</b></th>
+				<th><b>Contraband (in EC)</b></th>
+				<th><B>Zen (in Dilithium></B></th>
+				</tr>
+				<tr>
+				<th><input name="keyrate" type="number" value="0" /></th>
+				<th><input name="cbdrate" type="number" value="0" /></th>
+				<th><input name ="zenrate" type="number" value="0" /></th>
+				</tr>
+				</table>
 				<br /><br />
 				<b>***Calculations***</b>
 				<br />5 Contraband = 2000 Dilithium (DOff Mission)

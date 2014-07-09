@@ -41,10 +41,7 @@ function DoTheMath() {
 	//Number of Keys/Packs/FSMs
 	var keynum = parseInt(form.elements["keynum"].value);
 	var packnum = parseInt(form.elements["packnum"].value);
-	
-/*	
 	var fsmnum = parseInt(form.elements["fsmnum"].value);
-*/
 	
 	//Calculated Variables for Individual Keys
 	var ind_cbd_num	= form.elements["ind_cbd_num"];
@@ -56,12 +53,10 @@ function DoTheMath() {
 	var pack_cbd_cost = form.elements["pack_cbd_cost"];
 	var pack_cbd_net = form.elements["pack_cbd_net"];
 
-/*	
 	//Calculated Variables for FSMs
 	var fsm_cbd_num = form.elements["fsm_cbd_num"];
 	var fsm_cbd_cost = form.elements["fsm_cbd_cost"];
 	var fsm_cbd_net = form.elements["fsm_cbd_net"];
-*/
 
 	//Math for Individual Keys
 	ind_cbd_num.value = Math.ceil(((zenrate * 125) * keynum) / 400);
@@ -73,12 +68,11 @@ function DoTheMath() {
 	pack_cbd_cost.value = pack_cbd_num.value * cbdrate;
 	pack_cbd_net.value = ((keyrate * 10) * packnum)-pack_cbd_cost.value;
 
-/*
 	//Math for FSMs
 	fsm_cbd_num.value = Math.ceil(((zenrate * 125) * fsmnum) / 400);
 	fsm_cbd_cost.value = fsm_num.value * fsmrate;
 	fsm_cbd_net = (fsmrate * fsmnum)-fsm_cost.value;
-*/	
+	
 }
 
 
@@ -175,7 +169,7 @@ function DoTheMath() {
 				
 				
 				<!--FSM Table -->
-				<!--
+				
 				<table border = "1" cellpadding = "4">
 				<tr bgcolor="lightblue">
 					<th colspan = "4">Fleet Ship Modules</th>
@@ -189,7 +183,7 @@ function DoTheMath() {
 					<td><output name="fsm_cbd_cost">0</output></td><td><output name="fsm_cbd_net">0</output></td>
 				</tr>
 				</table>
-				-->
+				
 				<br/>
 			</form>
 		</div>

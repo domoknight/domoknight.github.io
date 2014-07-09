@@ -43,10 +43,11 @@ function DoTheMath() {
 	
 	//Calculated Variables for Individual Keys
 	var ind_cbd_num	= form.elements["ind_cbd_num"];
+	var ind_cbd_int = Math.ceil(form.elements["ind_cbd_num"].value)
 	var ind_cbd_cost = form.elements["ind_cbd_cost"];
 	var ind_cbd_net	= form.elements["ind_cbd_net"];
 
-	//Calculated Variabels for Key Packs
+	//Calculated Variables for Key Packs
 	var pack_cbd_num = form.elements["pack_cbd_num"];
 	var pack_cbd_cost = form.elements["pack_cbd_cost"];
 	var pack_cbd_net = form.elements["pack_cbd_net"];
@@ -114,7 +115,7 @@ function DoTheMath() {
 				
 				<u>Buying individual Keys</u>
 				<br />Enter the number of Keys you want to buy:<input name="keynum" type="number" value="0" />
-				<br />For this, you will need to buy <output name="ind_cbd_num">0</output> Contraband.
+				<br />For this, you will need to buy <output name="ind_cbd_num">0</output> Contraband.  Or should  say <output name="ind_cbd_int">0</output>
 				<br />Using the rates above, this should cost <output name="ind_cbd_cost">0</output> EC, but after selling your keys should net <output name="ind_cbd_net">0</output> EC
 				</br></br>
 				<u>Buying 10-Packs of Keys</u>

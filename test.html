@@ -33,14 +33,14 @@ function DoTheMath() {
 	var zdiscount = parseInt(form.elements["zdiscount"].value);
 
 	//Conversion Rates
-	var zdc = form.elements["zdc"];
+	//var zdc = form.elements["zdc"];
 	var zkc = form.elements["zkc"];
 	var zpc = form.elements["zpc"];
 	var zfc = form.elements["zfc"];
-	zdc.value = 1-(zdiscount/100);
-	zkc.value = (125 * zdc.value).toFixed();
-	zpc.value = (1125 * zdc.value).toFixed();
-	zfc.value = (500 * zdc.value).toFixed();
+	//zdc.value = 1-(zdiscount/100);
+	zkc.value = (125 * (1-(zdiscount/100))).toFixed();
+	zpc.value = (1125 * (1-(zdiscount/100))).toFixed();
+	zfc.value = (500 * (1-(zdiscount/100))).toFixed();
 	
 	//Number of Keys/Packs/FSMs
 	var keynum = parseInt(form.elements["keynum"].value);

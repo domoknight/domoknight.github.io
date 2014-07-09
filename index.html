@@ -43,7 +43,7 @@ function DoTheMath() {
 	
 	//Calculated Variables for Individual Keys
 	var ind_cbd_num	= form.elements["ind_cbd_num"];
-	var ind_cbd_int = parseInt(Math.ceil(form.elements["ind_cdb_cbd"]));
+	var ind_cbd_int = form.elements["ind_cdb_int"];
 	var ind_cbd_cost = form.elements["ind_cbd_cost"];
 	var ind_cbd_net	= form.elements["ind_cbd_net"];
 
@@ -56,6 +56,8 @@ function DoTheMath() {
 	ind_cbd_num.value = (((zenrate * 125) * keynum) / 400);
 	ind_cbd_cost.value = ind_cbd_num.value * cbdrate;
 	ind_cbd_net.value = (keyrate * keynum)-ind_cbd_cost.value;
+	
+	ind_cbd_int.value = Math.ceil(ind_cbd_num.value);
 	
 	//Math for Key Packs
 	pack_cbd_num.value = (((zenrate * 1125) * packnum) / 400);
@@ -86,9 +88,9 @@ function DoTheMath() {
 				<th><B>Zen (in Dilithium)</B></th>
 				</tr>
 				<tr bgcolor = "yellow">
-				<th><input name="keyrate" type="number" value="3000000" /></th>
-				<th><input name="cbdrate" type="number" value="50000" /></th>
-				<th><input name ="zenrate" type="number" value="150" /></th>
+				<th><input name="keyrate" type="number" value="0" /></th>
+				<th><input name="cbdrate" type="number" value="0" /></th>
+				<th><input name ="zenrate" type="number" value="0" /></th>
 				</tr>
 				</table>
 				

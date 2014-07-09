@@ -32,14 +32,23 @@ function DoTheMath() {
 	var fsmrate = parseInt(form.elements["fsmrate"].value);
 	var zdiscount = parseInt(form.elements["zdiscount"].value);
 
+	//Standard Rates
+	var zkey = form.elements["zkey"];
+	var zpack = form.elements["zpack"];
+	var zfsm = form.elements["zfsm"];
+	zkey.value = 125;
+	zpack.value = 1125;
+	zfsm.value = 500;
+		
 	//Conversion Rates
 	var zdc = form.elements["zdc"];
-	var zkey = form.elements["zkey"];
 	var zkc = form.elements["zkc"];
-	var zpack = form.elements["zpack"];
 	var zpc = form.elements["zpc"];
-	var zfsm = form.elements["zfsm"];
 	var zfc = form.elements["zfc"];
+	zdc.value = 1-(zdiscount/100);
+	zkc.value = (zkey.value * zdc.value).toFixed();
+	zpc.value = (zpack.value * zdc.value).toFixed();
+	zfc.value = (zfsm.value * zdc.value).toFixed();
 	
 	//Number of Keys/Packs/FSMs
 	var keynum = parseInt(form.elements["keynum"].value);
@@ -60,18 +69,6 @@ function DoTheMath() {
 	var fsm_cbd_num = form.elements["fsm_cbd_num"];
 	var fsm_cbd_cost = form.elements["fsm_cbd_cost"];
 	var fsm_cbd_net = form.elements["fsm_cbd_net"];
-	
-	//Math for Zen Discount
-	zdc.value = 1-(zdiscount/100);
-	zkey.value = 125;
-	zpack.value = 1125;
-	zfsm.value = 500;
-	
-	zkc.value = (zkey.value * zdc.value).toFixed();
-	zpc.value = (zpack.value * zdc.value).toFixed();
-	zfc.value = (zfsm.value * zdc.value).toFixed();
-	
-	
 	
 	//Math for Individual Keys
 	ind_cbd_num.value = Math.ceil(((zenrate * zkc.value) * keynum) / 400);

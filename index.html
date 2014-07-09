@@ -24,6 +24,30 @@ If you make a mistake, just refresh this page.
 
 -->
 
+<style type="text/css">
+/*number inputs*/
+input[type="number"] {
+width:80px; height:30px; 
+text-align:center; 
+margin:3px; 
+float:left;
+}
+
+/*output element*/
+output {
+display:block; 
+border:1px solid #333333; 
+border-radius:5px; 
+min-width:40px; height:30px; 
+margin:3px; padding:2px;
+text-align:center; 
+background:#428bca; 
+color:#ffffff; 
+float:left;
+}
+
+</style>
+
 <script type="text/javascript">
 
 function DoTheMath() { 
@@ -46,7 +70,7 @@ function DoTheMath() {
 	var ind_cbd_cost = form.elements["ind_cbd_cost"];
 	var ind_cbd_net	= form.elements["ind_cbd_net"];
 	
-	var ind_cbd_ceil = Math.ceil(ind_cbd_num.value);
+	var ind_cbd_ceil = Math.ceil(ind_cbd_num);
 
 	//Calculated Variabels for Key Packs
 	var pack_cbd_num = form.elements["pack_cbd_num"];

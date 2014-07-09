@@ -74,7 +74,7 @@ function DoTheMath() {
 	
 	
 	//Math for Individual Keys
-	ind_cbd_num.value = Math.ceil(((zenrate * 125) * keynum) / 400);
+	ind_cbd_num.value = Math.ceil(((zenrate * zfc.value) * keynum) / 400);
 	ind_cbd_cost.value = ind_cbd_num.value * cbdrate;
 	ind_cbd_net.value = (keyrate * keynum)-ind_cbd_cost.value;
 	
@@ -105,6 +105,21 @@ function DoTheMath() {
 				<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1) Fill out the items in the yellow boxes.
 				<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2) Profit(?)
 				<br/><br />
+				
+				<!--Debug -->
+				<output name="ind_cbd_num">0</output><br>
+				<output name="ind_cbd_cost">0</output><br>
+				<output name="ind_cbd_net">0</output><br>
+				<output name="pack_cbd_num">0</output><br>
+				<output name="pack_cbd_cost">0</output><br>
+				<output name="pack_cbd_net">0</output><br>
+				<output name="fsm_cbd_num">0</output><br>
+				<output name="fsm_cbd_cost">0</output><br>
+				<output name="fsm_cbd_net">0</output><br>
+				<output name="zdc">0</output><br>
+				<output name="zkc">0</output><br>
+				<output name="zpc">0</output><br>
+				<output name="zfc">0</output><br>
 				
 				
 				<!--Exchange Table -->

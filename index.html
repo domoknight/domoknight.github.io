@@ -60,13 +60,13 @@ stacks.value = drain.value * 8;
 	var pack_cbd_cost	= form.elements["pack_cbd_cost"]
 	var pack_cbd_net	= form.elements["pack_cbd_net"]
 
-	ind_cbd_num = math.ceil(((zenrate*125)*keynum)/400);
-	ind_cbd_cost = ind_cdb_num*cbdrate;
-	ind_cbd_net = (keyrate*keynum)-ind_cbd_cost;
+	ind_cbd_num.value = math.ceil(((zenrate*125)*keynum)/400);
+	ind_cbd_cost.value = ind_cdb_num*cbdrate;
+	ind_cbd_net.value = (keyrate*keynum)-ind_cbd_cost;
 
-	pack_cdb_num = math.ceil(((zenrate*1125)*packnum)/400);
-	pack_cbd_cost = pack_cdb_num*cbdrate;
-	pack_cbd_net = ((keyrate*10)*packnum)-pack_cbd_cost;
+	pack_cdb_num.value = math.ceil(((zenrate*1125)*packnum)/400);
+	pack_cbd_cost.value = pack_cdb_num*cbdrate;
+	pack_cbd_net.value = ((keyrate*10)*packnum)-pack_cbd_cost;
 
 
 }

@@ -78,6 +78,7 @@ function DoTheMath() {
 		
 			<form id="zencalc" oninput="DoTheMath()">
 				<p>Enter the current Exchange Rates for the following items:
+				<!--Exchange Table -->
 				<table border="1">
 				<tr bgcolor = "lightblue">
 				<th>Lockbox Key (in EC)</th>
@@ -93,6 +94,8 @@ function DoTheMath() {
 				
 				<br /><br />
 				
+				
+				<!--Conversions Table -->
 				<table border = "1">
 				<tr bgcolor = "lightblue">
 				<th colspan="3"><b>***Conversions***</b></th>
@@ -112,7 +115,7 @@ function DoTheMath() {
 				</table>
 				<br /><br />
 				
-
+				<!--Individual Keys Table -->
 				<table>
 				<tr bgcolor="lightblue">
 					<th colspan = "4">Buying Individual Keys</th>
@@ -127,11 +130,12 @@ function DoTheMath() {
 				</tr>
 				</table>
 				
+				<!--
 				<u>Buying individual Keys</u>
 				<br />Enter the number of Keys you want to buy:<input name="keynum" type="number" value="1" />
 				<br />For this, you will need to buy <output name="ind_cbd_num">0</output> Contraband.
 				<br />Using the rates above, this should cost <output name="ind_cbd_cost">0</output> EC, but after selling your keys should net <output name="ind_cbd_net">0</output> EC
-				</br></br>
+				--></br></br>
 				<u>Buying 10-Packs of Keys</u>
 				<br />Enter the number of 10-Packs you want to buy:<input name="packnum" type="number" value="1" />
 				<br />For this, you will need to buy <output name="pack_cbd_num">0</output> Contraband.

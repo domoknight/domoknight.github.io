@@ -74,7 +74,7 @@ function DoTheMath() {
 
 	//Math for FSMs
 	fsm_cbd_num.value = Math.ceil(((zenrate * zfc.value) * fsmnum) / 400);
-	fsm_cbd_cost.value = fsm_cbd_num.value * fsmrate;
+	fsm_cbd_cost.value = fsm_cbd_num.value * cdbrate;
 	fsm_cbd_net.value = (fsmrate * fsmnum)-fsm_cbd_cost.value;
 	
 }
@@ -106,8 +106,8 @@ function DoTheMath() {
 				<output name="fsm_cbd_num">0</output><br>
 				<output name="fsm_cbd_cost">0</output><br>
 				<output name="fsm_cbd_net">0</output><br>
-				-->
 				<output name="zdc">1</output><br>
+				-->
 				
 				
 				<!--Exchange Table -->

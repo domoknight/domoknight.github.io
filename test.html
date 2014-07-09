@@ -30,17 +30,14 @@ function DoTheMath() {
 	var cbdrate = parseInt(form.elements["cbdrate"].value);
 	var zenrate = parseInt(form.elements["zenrate"].value);
 	var fsmrate = parseInt(form.elements["fsmrate"].value);
+	var zdiscount = parseInt(form.elements["zdiscount"].value);
 
 	//Conversion Rates
-	var zdiscount = parseInt(form.elements["zdiscount"].value);
 	var zdc = form.elements["zdc"];
-	
 	var zkey = form.elements["zkey"];
 	var zkc = form.elements["zkc"];
-	
 	var zpack = form.elements["zpack"];
 	var zpc = form.elements["zpc"];
-	
 	var zfsm = form.elements["zfsm"];
 	var zfc = form.elements["zfc"];
 	
@@ -77,7 +74,7 @@ function DoTheMath() {
 	
 	
 	//Math for Individual Keys
-	ind_cbd_num.value = Math.ceil(((zenrate * zkc.value) * keynum) / 400);
+	ind_cbd_num.value = Math.ceil(((zenrate * 125) * keynum) / 400);
 	ind_cbd_cost.value = ind_cbd_num.value * cbdrate;
 	ind_cbd_net.value = (keyrate * keynum)-ind_cbd_cost.value;
 	

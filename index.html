@@ -45,8 +45,6 @@ stacks.value = drain.value * 8;
 //Contraband
 
 	var form = document.getElementById("zencalc");
-	
-	var contra = parseInt(form.elements["contra"].value);
 
 	var keyrate = parseInt(form.elements["keyrate"].value);
 	var cbdrate = parseInt(form.elements["cbdrate"].value);
@@ -62,13 +60,13 @@ stacks.value = drain.value * 8;
 	var pack_cbd_cost	= form.elements["pack_cbd_cost"]
 	var pack_cbd_net	= form.elements["pack_cbd_net"]
 
-	ind_cbd_num.value = math.ceil(((zenrate*125)*keynum)/400);
-	ind_cbd_cost.value = ind_cdb_num*cbdrate;
-	ind_cbd_net.value = (keyrate*keynum)-ind_cbd_cost;
+	ind_cbd_num.value = math.ceil(((zenrate * 125) * keynum) / 400);
+	ind_cbd_cost.value = ind_cdb_num * cbdrate;
+	ind_cbd_net.value = (keyrate * keynum)-ind_cbd_cost;
 
-	pack_cdb_num.value = math.ceil(((zenrate*1125)*packnum)/400);
-	pack_cbd_cost.value = pack_cdb_num*cbdrate;
-	pack_cbd_net.value = ((keyrate*10)*packnum)-pack_cbd_cost;
+	pack_cdb_num.value = math.ceil(((zenrate * 1125) * packnum) / 400);
+	pack_cbd_cost.value = pack_cdb_num * cbdrate;
+	pack_cbd_net.value = ((keyrate * 10) * packnum)-pack_cbd_cost;
 
 
 }
@@ -121,7 +119,7 @@ stacks.value = drain.value * 8;
 					<br /><br />
 				<u>Buying individual Keys</u>
 				<br /><p>Enter the number of Keys you want to buy:</p><input name="keynum" type="number" value="0" />
-				<br />For this, you will need to buy <output name="ind_cbd_num" for="contra ind_cbd_num">0</output> Contraband.
+				<br />For this, you will need to buy <output name="ind_cbd_num" for="zenrate keynum">0</output> Contraband.
 				<br />Using the rates above, this should cost <output name="ind_cbd_cost">0</output> EC, but after selling your keys should net <output name="ind_cbd_net">0</output> EC
 					</br></br>
 				<u>Buying 10-Packs of Keys</u>

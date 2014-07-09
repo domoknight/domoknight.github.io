@@ -33,6 +33,16 @@ function DoTheMath() {
 
 	//Conversion Rates
 	var zdiscount = form.elements["zdiscount"];
+	var zdc = form.elements["zdc"];
+	
+	var zkey = form.elements["zkey"];
+	var zkc = form.elements["zkc"];
+	
+	var zpack = form.elements["zpack"];
+	var zpc = form.elements["zpc"];
+	
+	var zfsm = form.elements["zfsm"];
+	var zfc = form.elements["zfc"];
 	
 	//Number of Keys/Packs/FSMs
 	var keynum = parseInt(form.elements["keynum"].value);
@@ -53,19 +63,31 @@ function DoTheMath() {
 	var fsm_cbd_num = form.elements["fsm_cbd_num"];
 	var fsm_cbd_cost = form.elements["fsm_cbd_cost"];
 	var fsm_cbd_net = form.elements["fsm_cbd_net"];
-
+	
+	//Math for Zen Discount
+	zdc.value = 1-(zdiscount/100);
+	zkey.value = 125;
+	zpack.value = 1125;
+	zfsm.value = 500;
+	
+	zkc.value = (zkey.value * zdc.value).toFixed();
+	zpc.value = (zpack.value * zdc.value).toFixed();
+	zfc.value = (zfsm.value * zdc.value).toFixed();
+	
+	
+	
 	//Math for Individual Keys
-	ind_cbd_num.value = Math.ceil(((zenrate * 125) * keynum) / 400);
+	ind_cbd_num.value = Math.ceil(((zenrate * zkc.value) * keynum) / 400);
 	ind_cbd_cost.value = ind_cbd_num.value * cbdrate;
 	ind_cbd_net.value = (keyrate * keynum)-ind_cbd_cost.value;
 	
 	//Math for Key Packs
-	pack_cbd_num.value = Math.ceil(((zenrate * 1125) * packnum) / 400);
+	pack_cbd_num.value = Math.ceil(((zenrate * zpc.value) * packnum) / 400);
 	pack_cbd_cost.value = pack_cbd_num.value * cbdrate;
 	pack_cbd_net.value = ((keyrate * 10) * packnum)-pack_cbd_cost.value;
 
 	//Math for FSMs
-	fsm_cbd_num.value = Math.ceil(((zenrate * 125) * fsmnum) / 400);
+	fsm_cbd_num.value = Math.ceil(((zenrate * zfc.value) * fsmnum) / 400);
 	fsm_cbd_cost.value = fsm_cbd_num.value * fsmrate;
 	fsm_cbd_net.value = (fsmrate * fsmnum)-fsm_cbd_cost.value;
 	
@@ -115,22 +137,22 @@ function DoTheMath() {
 				<!--Conversions Table -->
 				<table border = "1" cellpadding = "4">
 				<tr bgcolor = "lightblue">
-				<th colspan="3"><b>Conversions</b></th>
+				<th colspan="4"><b>Conversions</b></th>
 				</tr>
 				<tr bg color = "lightblue">
-				<th>Item</th><th>Redeem Value</th><th>Method to Obtain</th>
+				<th>Item</th><th>Quantity</th><th>Redeem Value</th><th>Method to Obtain</th>
 				</tr>
 				<tr>
-				<td>5 Contraband</td><td>2000 Dilithium</td><td><a href="http://sto.gamepedia.com/Assignment:_Turn_Over_Confiscated_Contraband">Turn Over Confiscated Contraband</a></td>
+				<td>Contraband</td><td>5</td><td>2000 Dilithium</td><td><a href="http://sto.gamepedia.com/Assignment:_Turn_Over_Confiscated_Contraband">Turn Over Confiscated Contraband</a></td>
 				</tr>
 				<tr>
-				<td>125 Zen</td><td>1 Key</td><td>Z-Store Items </td>
+				<td>Zen</td><td>125</td><td>1 Key</td><td>Z-Store Items </td>
 				</tr>
 				<tr>
-				<td>1125 Zen</td><td>10 Pack of Keys</td><td>Z-Store Items</td>
+				<td>Zen</td><td>1125</td><td>10 Pack of Keys</td><td>Z-Store Items</td>
 				</tr>
 				<tr>
-				<td>500 Zen</td><td>1 Fleet Ship Module</td><td>Z-Store Items</td>
+				<td>Zen</td><td>500</td><td>1 Fleet Ship Module</td><td>Z-Store Items</td>
 				</tr>
 				</table>
 				<br />

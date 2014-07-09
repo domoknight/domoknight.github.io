@@ -53,8 +53,8 @@ function DoTheMath() {
 
 	//Math for Individual Keys
 	ind_cbd_num.value = (((zenrate * 125) * keynum) / 400);
-	ind_cbd_cost.value = ind_cdb_num * cbdrate;
-	ind_cbd_net.value = (keyrate * keynum)-ind_cbd_cost;
+	ind_cbd_cost.value = ind_cdb_num.value * cbdrate;
+	ind_cbd_net.value = (keyrate * keynum)-ind_cbd_cost.value;
 
 	//Math for Key Packs
 	pack_cdb_num.value = (((zenrate * 1125) * packnum) / 400);

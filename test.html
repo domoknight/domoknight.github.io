@@ -32,7 +32,7 @@ function DoTheMath() {
 	var fsmrate = parseInt(form.elements["fsmrate"].value);
 	
 	//Conversion Rates
-	var zendc = form.elements["zendc"];
+	var zdiscount = form.elements["zdiscount"];
 	
 	//Number of Keys/Packs/FSMs
 	var keynum = parseInt(form.elements["keynum"].value);
@@ -48,16 +48,13 @@ function DoTheMath() {
 	var pack_cbd_num = form.elements["pack_cbd_num"];
 	var pack_cbd_cost = form.elements["pack_cbd_cost"];
 	var pack_cbd_net = form.elements["pack_cbd_net"];
-	
+
+/*	
 	//Calculated Variables for FSMs
 	var fsm_cbd_num = form.elements["fsm_cbd_num"];
 	var fsm_cbd_cost = form.elements["fsm_cbd_cost"];
 	var fsm_cbd_net = form.elements["fsm_cbd_net"];
-	
-	//Math for FSMs
-	fsm_cbd_num.value = Math.ceil(((zenrate * 125) * fsmnum) / 400);
-	fsm_cbd_cost.value = fsm_num.value * fsmrate;
-	fsm_cbd_net = (fsmrate * fsmnum)-fsm_cost.value;
+*/
 
 	//Math for Individual Keys
 	ind_cbd_num.value = Math.ceil(((zenrate * 125) * keynum) / 400);
@@ -69,7 +66,12 @@ function DoTheMath() {
 	pack_cbd_cost.value = pack_cbd_num.value * cbdrate;
 	pack_cbd_net.value = ((keyrate * 10) * packnum)-pack_cbd_cost.value;
 
-
+/*
+	//Math for FSMs
+	fsm_cbd_num.value = Math.ceil(((zenrate * 125) * fsmnum) / 400);
+	fsm_cbd_cost.value = fsm_num.value * fsmrate;
+	fsm_cbd_net = (fsmrate * fsmnum)-fsm_cost.value;
+*/	
 }
 
 

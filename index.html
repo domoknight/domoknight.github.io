@@ -52,9 +52,9 @@ function DoTheMath() {
 	var pack_cbd_net = form.elements["pack_cbd_net"]
 
 	//Math for Individual Keys
-	ind_cbd_num.value = (((zenrate * 125) * keynum) / 400).toFixed();
-	ind_cbd_cost.value = ind_cbd_num.value * cbdrate;
-	ind_cbd_net.value = (keyrate * keynum)-ind_cbd_cost.value;
+	ind_cbd_num.value = (((zenrate * 125) * keynum) / 400);
+	ind_cbd_cost.value = ind_cbd_num * cbdrate;
+	ind_cbd_net.value = (keyrate * keynum)-ind_cbd_cost;
 
 	//Math for Key Packs
 	pack_cbd_num.value = (((zenrate * 1125) * packnum) / 400).toFixed();

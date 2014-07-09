@@ -29,10 +29,23 @@ function DoTheMath() {
 	var keyrate = parseInt(form.elements["keyrate"].value);
 	var cbdrate = parseInt(form.elements["cbdrate"].value);
 	var zenrate = parseInt(form.elements["zenrate"].value);
+	var fsmrate = parseInt(form.elements["fsmrate"].value);
+	var zdiscount = parseInt(form.elements["zdiscount"].value);
+
+	//Conversion Rates
+	//var zdc = form.elements["zdc"];
+	var zkc = form.elements["zkc"];
+	var zpc = form.elements["zpc"];
+	var zfc = form.elements["zfc"];
+	//zdc.value = 1-(zdiscount/100);
+	zkc.value = (125 * (1-(zdiscount/100))).toFixed();
+	zpc.value = (1125 * (1-(zdiscount/100))).toFixed();
+	zfc.value = (500 * (1-(zdiscount/100))).toFixed();
 	
-	//Number of Keys/Packs
+	//Number of Keys/Packs/FSMs
 	var keynum = parseInt(form.elements["keynum"].value);
 	var packnum = parseInt(form.elements["packnum"].value);
+	var fsmnum = parseInt(form.elements["fsmnum"].value);
 	
 	//Calculated Variables for Individual Keys
 	var ind_cbd_num	= form.elements["ind_cbd_num"];
@@ -44,17 +57,26 @@ function DoTheMath() {
 	var pack_cbd_cost = form.elements["pack_cbd_cost"];
 	var pack_cbd_net = form.elements["pack_cbd_net"];
 
+	//Calculated Variables for FSMs
+	var fsm_cbd_num = form.elements["fsm_cbd_num"];
+	var fsm_cbd_cost = form.elements["fsm_cbd_cost"];
+	var fsm_cbd_net = form.elements["fsm_cbd_net"];
+	
 	//Math for Individual Keys
-	ind_cbd_num.value = Math.ceil(((zenrate * 125) * keynum) / 400);
+	ind_cbd_num.value = Math.ceil(((zenrate * zkc.value) * keynum) / 400);
 	ind_cbd_cost.value = ind_cbd_num.value * cbdrate;
 	ind_cbd_net.value = (keyrate * keynum)-ind_cbd_cost.value;
 	
 	//Math for Key Packs
-	pack_cbd_num.value = Math.ceil(((zenrate * 1125) * packnum) / 400);
+	pack_cbd_num.value = Math.ceil(((zenrate * zpc.value) * packnum) / 400);
 	pack_cbd_cost.value = pack_cbd_num.value * cbdrate;
 	pack_cbd_net.value = ((keyrate * 10) * packnum)-pack_cbd_cost.value;
 
-
+	//Math for FSMs
+	fsm_cbd_num.value = Math.ceil(((zenrate * zfc.value) * fsmnum) / 400);
+	fsm_cbd_cost.value = fsm_cbd_num.value * cbdrate;
+	fsm_cbd_net.value = (fsmrate * fsmnum)-fsm_cbd_cost.value;
+	
 }
 
 
@@ -73,21 +95,39 @@ function DoTheMath() {
 				<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2) Profit(?)
 				<br/><br />
 				
+				<!--Debug -->
+				<!--
+				<output name="ind_cbd_num">0</output><br>
+				<output name="ind_cbd_cost">0</output><br>
+				<output name="ind_cbd_net">0</output><br>
+				<output name="pack_cbd_num">0</output><br>
+				<output name="pack_cbd_cost">0</output><br>
+				<output name="pack_cbd_net">0</output><br>
+				<output name="fsm_cbd_num">0</output><br>
+				<output name="fsm_cbd_cost">0</output><br>
+				<output name="fsm_cbd_net">0</output><br>
+				<output name="zdc">1</output><br>
+				-->
+				
 				
 				<!--Exchange Table -->
 				<table border="1" cellpadding = "4">
 				<tr bgcolor = "lightblue">
-				<th colspan = "3">Exchange Rates</th>
+				<th colspan = "5">Exchange Rates</th>
 				</tr>
 				<tr>
 				<th>Lockbox Key (in EC)</th>
 				<th>Contraband (in EC)</th>
+				<th>Fleet Ship Module (in EC)</th>
 				<th>Zen (in Dilithium)</th>
+				<th>Zen Discount (as a percentage)</th>
 				</tr>
 				<tr bgcolor = "yellow">
 				<th><input name="keyrate" type="number" value="0" /></th>
 				<th><input name="cbdrate" type="number" value="0" /></th>
+				<th><input name="fsmrate" type="number" value="0" /></th>
 				<th><input name ="zenrate" type="number" value="0" /></th>
+				<th><input name ="zdiscount" type="number" value="0" />%</th>
 				</tr>
 				</table>
 				
@@ -97,19 +137,22 @@ function DoTheMath() {
 				<!--Conversions Table -->
 				<table border = "1" cellpadding = "4">
 				<tr bgcolor = "lightblue">
-				<th colspan="3"><b>Conversions</b></th>
+				<th colspan="4"><b>Conversions</b></th>
 				</tr>
 				<tr bg color = "lightblue">
-				<th>Item</th><th>Redeem Value</th><th>Method to Obtain</th>
+				<th>Item</th><th>Quantity</th><th>Redeem Value</th><th>Method to Obtain</th>
 				</tr>
 				<tr>
-				<td>5 Contraband</td><td>2000 Dilithium</td><td><a href="http://sto.gamepedia.com/Assignment:_Turn_Over_Confiscated_Contraband">Turn Over Confiscated Contraband</a></td>
+				<td>Contraband</td><td>5</td><td>2000 Dilithium</td><td><a href="http://sto.gamepedia.com/Assignment:_Turn_Over_Confiscated_Contraband">Turn Over Confiscated Contraband</a></td>
 				</tr>
 				<tr>
-				<td>125 Zen</td><td>1 Key</td><td>Z-Store Items </td>
+				<td>Zen</td><td><output name="zkc">125</output></td><td>1 Key</td><td>Z-Store Items </td>
 				</tr>
 				<tr>
-				<td>1125 Zen</td><td>10 Pack of Keys</td><td>Z-Store Items</td>
+				<td>Zen</td><td><output name="zpc">1125</output></td><td>10 Pack of Keys</td><td>Z-Store Items</td>
+				</tr>
+				<tr>
+				<td>Zen</td><td><output name="zfc">500</output></td><td>1 Fleet Ship Module</td><td>Z-Store Items</td>
 				</tr>
 				</table>
 				<br />
@@ -117,10 +160,10 @@ function DoTheMath() {
 				<!--Individual Keys Table -->
 				<table border = "1" cellpadding = "4">
 				<tr bgcolor="lightblue">
-					<th colspan = "4">Buying Individual Keys</th>
+					<th colspan = "4">Individual Keys</th>
 				</tr>
 				<tr>
-					<th>Number of Keys Wanted</th><th>Number of Contraband to Buy</th>
+					<th># of Keys Wanted</th><th># of Contraband to Buy</th>
 					<th>Cost in EC</th><th>Net EC after Selling Keys</th>
 				</tr>
 				<tr>
@@ -128,14 +171,15 @@ function DoTheMath() {
 					<td><output name="ind_cbd_cost">0</output></td><td><output name="ind_cbd_net">0</output></td>
 				</tr>
 				</table>
-				<br/>
+				<br />
+				
 				<!--Packs of Keys Table -->
 				<table border = "1" cellpadding = "4">
 				<tr bgcolor="lightblue">
-					<th colspan = "4">Buying 10-Packs of Keys</th>
+					<th colspan = "4">10-Packs of Keys</th>
 				</tr>
 				<tr>
-					<th>Number of Packs Wanted</th><th>Number of Contraband to Buy</th>
+					<th># of Packs Wanted</th><th># of Contraband to Buy</th>
 					<th>Cost in EC</th><th>Net EC after Selling Keys</th>
 				</tr>
 				<tr>
@@ -143,7 +187,25 @@ function DoTheMath() {
 					<td><output name="pack_cbd_cost">0</output></td><td><output name="pack_cbd_net">0</output></td>
 				</tr>
 				</table>
+				<br />
 				
+				<!--FSM Table -->
+				
+				<table border = "1" cellpadding = "4">
+				<tr bgcolor="lightblue">
+					<th colspan = "4">Fleet Ship Modules</th>
+				</tr>
+				<tr>
+					<th># of FSMs Wanted</th><th># of Contraband to Buy</th>
+					<th>Cost in EC</th><th>Net EC after Selling FSMs</th>
+				</tr>
+				<tr>
+					<td bgcolor="yellow"><input name="fsmnum" type="number" value="1" /></td><td><output name="fsm_cbd_num">0</output></td>
+					<td><output name="fsm_cbd_cost">0</output></td><td><output name="fsm_cbd_net">0</output></td>
+				</tr>
+				</table>
+				
+				<br/>
 			</form>
 		</div>
 </div>

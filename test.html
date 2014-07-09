@@ -31,12 +31,8 @@ function DoTheMath() {
 	var zenrate = parseInt(form.elements["zenrate"].value);
 	var fsmrate = parseInt(form.elements["fsmrate"].value);
 
-
-/*	
 	//Conversion Rates
 	var zdiscount = form.elements["zdiscount"];
-*/
-
 	
 	//Number of Keys/Packs/FSMs
 	var keynum = parseInt(form.elements["keynum"].value);
@@ -95,19 +91,21 @@ function DoTheMath() {
 				<!--Exchange Table -->
 				<table border="1" cellpadding = "4">
 				<tr bgcolor = "lightblue">
-				<th colspan = "4">Exchange Rates</th>
+				<th colspan = "5">Exchange Rates</th>
 				</tr>
 				<tr>
 				<th>Lockbox Key (in EC)</th>
 				<th>Contraband (in EC)</th>
 				<th>Fleet Ship Module (in EC)</th>
 				<th>Zen (in Dilithium)</th>
+				<th>Zen Discount (as a percentage)</th>
 				</tr>
 				<tr bgcolor = "yellow">
 				<th><input name="keyrate" type="number" value="0" /></th>
 				<th><input name="cbdrate" type="number" value="0" /></th>
 				<th><input name="fsmrate" type="number" value="0" /></th>
 				<th><input name ="zenrate" type="number" value="0" /></th>
+				<th><input name ="zdiscount" type="number" value="0" />%</th>
 				</tr>
 				</table>
 				
@@ -151,7 +149,7 @@ function DoTheMath() {
 					<td><output name="ind_cbd_cost">0</output></td><td><output name="ind_cbd_net">0</output></td>
 				</tr>
 				</table>
-				
+				<br />
 				
 				<!--Packs of Keys Table -->
 				<table border = "1" cellpadding = "4">
@@ -167,7 +165,7 @@ function DoTheMath() {
 					<td><output name="pack_cbd_cost">0</output></td><td><output name="pack_cbd_net">0</output></td>
 				</tr>
 				</table>
-				
+				<br />
 				
 				<!--FSM Table -->
 				

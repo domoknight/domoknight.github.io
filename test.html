@@ -62,7 +62,7 @@ function DoTheMath() {
 	var fsm_cbd_net = form.elements["fsm_cbd_net"];
 	
 	//Math for Individual Keys
-	ind_cbd_num.value =  Math.floor(Math.ceil(((zenrate * zkc.value) * keynum) / 400)/5)*5 ;
+	ind_cbd_num.value =  Math.ceil(Math.ceil(((zenrate * zkc.value) * keynum) / 400)/5)*5 ;
 	ind_cbd_cost.value = ind_cbd_num.value * cbdrate;
 	ind_cbd_net.value = (keyrate * keynum)-ind_cbd_cost.value;
 	

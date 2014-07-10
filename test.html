@@ -37,7 +37,6 @@ function DoTheMath() {
 	var zkc = form.elements["zkc"];
 	var zpc = form.elements["zpc"];
 	var zfc = form.elements["zfc"];
-	//zdc.value = 1-(zdiscount/100);
 	zdc.value = (2000 * (1+(zbonus/100))).toFixed();
 	zkc.value = (125 * (1-(zdiscount/100))).toFixed();
 	zpc.value = (1125 * (1-(zdiscount/100))).toFixed();
@@ -64,17 +63,17 @@ function DoTheMath() {
 	var fsm_cbd_net = form.elements["fsm_cbd_net"];
 	
 	//Math for Individual Keys
-	ind_cbd_num.value =  Math.ceil(Math.ceil(((zenrate * zkc.value) * keynum) / 400)/5)*5 ;
+	ind_cbd_num.value =  Math.ceil(Math.ceil(((zenrate * zkc.value) * keynum) / (zdc.value/5))/5)*5 ;
 	ind_cbd_cost.value = ind_cbd_num.value * cbdrate;
 	ind_cbd_net.value = (keyrate * keynum)-ind_cbd_cost.value;
 	
 	//Math for Key Packs
-	pack_cbd_num.value = Math.ceil(Math.ceil(((zenrate * zpc.value) * packnum) / 400)/5)*5;
+	pack_cbd_num.value = Math.ceil(Math.ceil(((zenrate * zpc.value) * packnum) / (zdc.value/5))/5)*5;
 	pack_cbd_cost.value = pack_cbd_num.value * cbdrate;
 	pack_cbd_net.value = ((keyrate * 10) * packnum)-pack_cbd_cost.value;
 
 	//Math for FSMs
-	fsm_cbd_num.value = Math.ceil(Math.ceil(((zenrate * zfc.value) * fsmnum) / 400)/5)*5;
+	fsm_cbd_num.value = Math.ceil(Math.ceil(((zenrate * zfc.value) * fsmnum) / (zdc.value/5))/5)*5;
 	fsm_cbd_cost.value = fsm_cbd_num.value * cbdrate;
 	fsm_cbd_net.value = (fsmrate * fsmnum)-fsm_cbd_cost.value;
 	

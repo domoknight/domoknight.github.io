@@ -62,17 +62,17 @@ function DoTheMath() {
 	var fsm_cbd_net = form.elements["fsm_cbd_net"];
 	
 	//Math for Individual Keys
-	ind_cbd_num.value = Math.ceil(((zenrate * zkc.value) * keynum) / 400);
+	ind_cbd_num.value =  Math.ceil(Math.ceil(((zenrate * zkc.value) * keynum) / 400)/5)*5 ;
 	ind_cbd_cost.value = ind_cbd_num.value * cbdrate;
 	ind_cbd_net.value = (keyrate * keynum)-ind_cbd_cost.value;
 	
 	//Math for Key Packs
-	pack_cbd_num.value = Math.ceil(((zenrate * zpc.value) * packnum) / 400);
+	pack_cbd_num.value = Math.ceil(Math.ceil(((zenrate * zpc.value) * packnum) / 400)/5)*5;
 	pack_cbd_cost.value = pack_cbd_num.value * cbdrate;
 	pack_cbd_net.value = ((keyrate * 10) * packnum)-pack_cbd_cost.value;
 
 	//Math for FSMs
-	fsm_cbd_num.value = Math.ceil(((zenrate * zfc.value) * fsmnum) / 400);
+	fsm_cbd_num.value = Math.ceil(Math.ceil(((zenrate * zfc.value) * fsmnum) / 400)/5)*5;
 	fsm_cbd_cost.value = fsm_cbd_num.value * cbdrate;
 	fsm_cbd_net.value = (fsmrate * fsmnum)-fsm_cbd_cost.value;
 	
@@ -90,6 +90,7 @@ function DoTheMath() {
 		
 			<form id="zencalc" oninput="DoTheMath()">
 				<b>Instructions:</b> &nbsp;&nbsp;1) Fill out the items in the yellow boxes. &nbsp;&nbsp;2) Profit(?)
+                <br><b>Notes:</b> &nbsp;&nbsp; This calculator takes into account that you MUST buy Contraband in sets of 5.
 				<br/><br />
 				
 				<!--Debug -->

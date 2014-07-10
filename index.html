@@ -112,24 +112,27 @@ function DoTheMath() {
 				<!--Exchange Table -->
 				<table border="1" cellpadding = "4" >
 				<tr bgcolor = "lightblue">
-				<th colspan = "4">Exchange Rates</th>
-                <th colspan = "2">Discount/Bonus</th>
+				<th colspan = "4"><u>Exchange Rates</u><br>
+				  (These figures can be found in-game at the Exchange and at the Dilithium Exchange)<br>
+				</th>
+                <th colspan = "2"><u>Discount/Bonus</u><br>
+                  (You only need to fill these out during Discount/Bonus events)</th>
 				</tr>
 				<tr>
 				<th align="center" valign="middle"><p><img src="Key.png"></p>
-				  <p>Master Key (in EC)</p>
+				  <p>Master Key<br> (in Energy Credits)</p>
 				  <p><img src="EC.png"></p></th>
 				<th align="center" valign="middle"><p><img src="Contraband.png"> </p>
-				  <p>Contraband (in EC)</p>
+				  <p>Contraband<br> (in Energy Credits)</p>
 				  <p><img src="EC.png"></p></th>
 				<th align="center" valign="middle"><p><img src="fsm.png"></p>
-				  <p>Fleet Ship Module (in EC)</p>
+				  <p>Fleet Ship Module<br> (in Energy Credits)</p>
 				  <p><img src="EC.png"></p></th>
 				<th align="center" valign="middle"><p><img src="Zen.png"></p>
-				  <p>Zen (in Dilithium)</p>
+				  <p>Zen<br> (in Dilithium)</p>
 				  <p><img src="Dil.png"></p></th>
-				<th align="center" valign="middle">Zen Discount (as a percentage)</th>
-                <th align="center" valign="middle">Dilithium Bonus (as a percentage)</th>
+				<th align="center" valign="middle">Zen Discount <br>(as a percentage)</th>
+                <th align="center" valign="middle">Dilithium Bonus <br>(as a percentage)</th>
 				</tr>
 				<tr bgcolor = "yellow">
 				<th><input name="keyrate" type="number" value="0" /></th>
@@ -143,16 +146,16 @@ function DoTheMath() {
                 <br/>
 				<table border="0">
 				  <tr>
-				    <td width="497" rowspan="3"><div align="center">
-				      <table border = "1" cellpadding = "4" >
+				    <td width="461" rowspan="3"><div align="center">
+				      <table width="441" height="615" border = "1" cellpadding = "4" >
 				        <tr bgcolor = "lightblue">
 				          <th colspan="4"><b>Conversions</b></th>
 			            </tr>
 				        <tr bg color = "lightblue">
 				          <th width="72">Item</th>
 				          <th width="58">Quantity</th>
-				          <th width="110">Redeem Value</th>
-				          <th width="181">Method to Obtain</th>
+				          <th width="116">Redeem Value</th>
+				          <th width="161">Method to Obtain</th>
 			            </tr>
 				        <tr>
 				          <td align="center" valign="middle"><p><img src="Contraband.png"></p>
@@ -160,14 +163,14 @@ function DoTheMath() {
 				          <td align="center" valign="middle">5</td>
 				          <td align="center" valign="middle"><p><img src="Dil.png"></p>
 				            <p><output name="zdc">2000</output> Dilithium</p></td>
-				          <td align="center" valign="middle"><a href="http://sto.gamepedia.com/Assignment:_Turn_Over_Confiscated_Contraband">Turn Over Confiscated Contraband</a></td>
+				          <td align="center" valign="middle"><a href="http://sto.gamepedia.com/Assignment:_Turn_Over_Confiscated_Contraband">Duty Officer Mission</a></td>
 			            </tr>
 				        <tr>
 				          <td align="center" valign="middle"><p><img src="Zen.png"></p>
 				            <p>Zen</p></td>
 				          <td align="center" valign="middle"><output name="zkc">125</output></td>
 				          <td align="center" valign="middle"><p><img src="Key.png"></p>
-				            <p>1 Key</p></td>
+				            <p>1 Master Key</p></td>
 				          <td align="center" valign="middle">Z-Store Items </td>
 			            </tr>
 				        <tr>
@@ -175,11 +178,11 @@ function DoTheMath() {
 				            <p>Zen</p></td>
 				          <td align="center" valign="middle"><output name="zpc">1125</output></td>
 				          <td align="center" valign="middle"><p><img src="Key.png"></p>
-				            <p>10 Pack of Keys</p></td>
+				            <p>10 Pack of Master Keys</p></td>
 				          <td align="center" valign="middle">Z-Store Items</td>
 			            </tr>
 				        <tr>
-				          <td align="center" valign="middle"><p><img src="Zen.png"></p>
+				          <td height="150" align="center" valign="middle"><p><img src="Zen.png"></p>
 				            <p>Zen</p></td>
 				          <td align="center" valign="middle"><output name="zfc">500</output></td>
 				          <td align="center" valign="middle"><p><img src="fsm.png"></p>
@@ -188,19 +191,19 @@ function DoTheMath() {
 			            </tr>
 			          </table>
 			        </div>				      <div align="center"></div>			        <div align="center"></div></td>
-				    <td width="601"><table border = "1" cellpadding = "4" >
+				    <td width="775"><table width="615" border = "1" cellpadding = "4" >
 				      <tr bgcolor="lightblue">
-				        <th colspan = "4">Individual Keys</th>
+				        <th colspan = "4">Buying Individual Master Keys with Zen</th>
 			          </tr>
 				      <tr>
-				        <th align="center" valign="middle"><p><img src="Key.png"></p>
-				          <p># of Keys Wanted</p></th>
-				        <th align="center" valign="middle"><p><img src="Contraband.png"></p>
+				        <th width="144" align="center" valign="middle"><p><img src="Key.png"></p>
+				          <p># of Master Keys Wanted</p></th>
+				        <th width="140" align="center" valign="middle"><p><img src="Contraband.png"></p>
 				          <p># of Contraband to Buy</p></th>
-				        <th align="center" valign="middle"><p><img src="EC.png"></p>
-				          <p>Cost in EC</p></th>
-				        <th align="center" valign="middle"><p><img src="EC.png"></p>
-				          <p>Net EC after Selling Keys</p></th>
+				        <th width="130" align="center" valign="middle"><p><img src="EC.png"></p>
+				          <p>Cost in Energy Credits</p></th>
+				        <th width="149" align="center" valign="middle"><p><img src="EC.png"></p>
+				          <p>Net Energy Credits after Selling Keys</p></th>
 			          </tr>
 				      <tr>
 				        <td bgcolor="yellow"><input name="keynum" type="number" value="1" /></td>
@@ -211,19 +214,19 @@ function DoTheMath() {
 			        </table></td>
 			      </tr>
 				  <tr>
-				    <td><table border = "1" cellpadding = "4">
+				    <td><table width="615" border = "1" cellpadding = "4">
 				      <tr bgcolor="lightblue">
-				        <th colspan = "4">10-Packs of Keys</th>
+				        <th colspan = "4">Buying 10-Packs of Master Keys with Zen</th>
 			          </tr>
 				      <tr>
-				        <th align="center" valign="middle"><p><img src="Key.png"></p>
-				          <p># of Packs Wanted</p></th>
-				        <th align="center" valign="middle"><p><img src="Contraband.png"></p>
+				        <th width="144" align="center" valign="middle"><p><img src="Key.png"></p>
+				          <p># of Master Key Packs Wanted</p></th>
+				        <th width="140" align="center" valign="middle"><p><img src="Contraband.png"></p>
 				          <p># of Contraband to Buy</p></th>
-				        <th align="center" valign="middle"><p><img src="EC.png"></p>
-				          <p>Cost in EC</p></th>
-				        <th align="center" valign="middle"><p><img src="EC.png"></p>
-				          <p>Net EC after Selling Keys</p></th>
+				        <th width="130" align="center" valign="middle"><p><img src="EC.png"></p>
+				          <p>Cost in Energy Credits</p></th>
+				        <th width="149" align="center" valign="middle"><p><img src="EC.png"></p>
+				          <p>Net Energy Credits after Selling Keys</p></th>
 			          </tr>
 				      <tr>
 				        <td bgcolor="yellow"><input name="packnum" type="number" value="1" /></td>
@@ -234,19 +237,19 @@ function DoTheMath() {
 			        </table></td>
 			      </tr>
 				  <tr>
-				    <td><table border = "1" cellpadding = "4">
+				    <td><table width="615" border = "1" cellpadding = "4">
 				      <tr bgcolor="lightblue">
-				        <th colspan = "4">Fleet Ship Modules</th>
+				        <th colspan = "4">Buying Fleet Ship Modules with Zen</th>
 			          </tr>
 				      <tr>
-				        <th align="center"><p><img src="fsm.png"></p>
+				        <th width="144" align="center"><p><img src="fsm.png"></p>
 				          <p># of FSMs Wanted</p></th>
-				        <th align="center"><p><img src="Contraband.png"></p>
+				        <th width="140" align="center"><p><img src="Contraband.png"></p>
 				          <p># of Contraband to Buy</p></th>
-				        <th align="center"><p><img src="EC.png"></p>
-				          <p>Cost in EC</p></th>
-				        <th align="center"><p><img src="EC.png"></p>
-				          <p>Net EC after Selling FSMs</p></th>
+				        <th width="130" align="center"><p><img src="EC.png"></p>
+				          <p>Cost in Energy Credits</p></th>
+				        <th width="149" align="center"><p><img src="EC.png"></p>
+				          <p>Net Energy Credits after Selling FSMs</p></th>
 			          </tr>
 				      <tr>
 				        <td bgcolor="yellow"><input name="fsmnum" type="number" value="1" /></td>
